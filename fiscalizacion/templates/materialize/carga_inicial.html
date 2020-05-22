@@ -1,0 +1,998 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+
+    <!--Import materialize.css-->
+    <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/> -->
+    <!-- <link rel="stylesheet" href="{% static 'materialize/css/materialize.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'materialize/css/materialize.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+    <!--JavaScript at end of body for optimized loading-->
+    <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
+
+
+    <!-- Iconos y fuentes local -->
+    <!-- http://google.github.io/material-design-icons/#icon-font-for-the-web -->
+
+
+
+  </head>
+
+  <body>
+
+    <nav>
+    <div class="nav-wrapper teal lighten-2">
+      <a href="#!" class="brand-logo" style="margin-left: 1em">Fiscalización R132</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href={%url 'r132:inicio' %}><i class="material-icons left">home</i>Inicio</a></li>
+        <li><a href="badges.html">Componentes</a></li>
+        <li><a href="collapsible.html">Ejemplos</a></li>
+        <li><a href="mobile.html">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href={%url 'r132:inicio' %}><i class="material-icons">home</i>Inicio</a></li>
+    <li><a href="badges.html">Componentes</a></li>
+    <li><a href="collapsible.html">Ejemplos</a></li>
+    <li><a href="mobile.html">Contacto</a></li>
+  </ul>
+
+    <div class="contailner">
+ 		<div class="card-panel waves-effect waves-block waves-light">
+		  	<div class="row">
+		    	<form class="col s12">
+						<!-- <hr size="0.02px" color="gray" /> -->
+									
+										<div class="input-field col s6 m3 I3">
+										  <!-- <input id="partido" type="text" class="validate"> -->
+										  <input id="partido" type="number" max="999" class="validate" value={{form.partido}}
+										  <label for="partido">Partido</label>
+										  <span class="helper-text" data-error="Error en formato. (Se espera un número entero < a 999)" data-success="Se ve bien!">Se espera un numero entero</span>
+										</div>
+										<div class="input-field col s6 m3 I3">
+										  <!-- <input id="partida" type="text" class="validate"> -->
+										  <input id="partida" type="number" max="999999" class="validate" value={{form.partida}}
+										  <label for="partida">Partida</label>
+										  <span class="helper-text" data-error="Error en formato. (Se espera un número entero < a 999999)" data-success="Se ve bien!">Se espera un numero entero</span>
+										</div>
+										<div class="input-field col s6 m3 I3">
+										  <!-- <input id="metros" type="text" class="validate"> -->
+										  <input id="metros" type="number" step="0.001" class="validate" value={{form.metros}}
+										  <label for="metros">Metros</label>
+										  <span class="helper-text" data-error="Error en formato. (Formato esperado 1111111,111)" data-success="Se ve bien!">Formato esperado (1111111,111)</span>
+										</div>
+										<div class="input-field col s6 m3 I3">	
+										  <!-- <input id="monto" type="number" step="any" class="validate"> -->
+										  <input id="monto" type="number" step="any" class="validate" value={{form.monto}}
+										  <!-- <input type="number" name="monto" id="monto" data-type="currency" class="validate"> -->
+ 
+										  <!-- <label for="monto" data-error="Invalid number (eg. 1200)">Monto</label> -->
+										  <span class="helper-text" data-error="Error en formato. (Formato esperado 1111111,111)" data-success="Se ve bien">Formato esperado (1111111,111)</span>
+										  
+										  <!-- <input type="text" name="currency-field" id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" value="" data-type="currency" placeholder="$1,000,000.00"> -->
+										  <label for="monto">Monto</label>
+										</div>
+									</div>
+						
+
+
+								
+				    		
+
+
+			    <div class="row">
+			      	
+						  		
+							        <div class="input-field col s12 m3 I3">
+							          <!-- <input value = "2360" id="expte1" type="text" class="validate">
+									  <label for="expte1">Organismo</label> -->
+									<input id="expte1" type="number" max="9999" placeholder = "2360" value="2360" class="validate">
+									<label for="expte1">Organismo</label>
+									<span class="helper-text" data-error="Error en formato. (Se espera un número entero < a 9999)" data-success="Se ve bien!">Se espera un numero entero</span>
+							        </div>
+							        <div class="input-field col s4 m3 I3">
+										<input id="expte2" type="number" max="9999999" placeholder = "0000000" class="validate">
+										<label for="expte2">Número</label>
+										<span class="helper-text" data-error="Error en formato. (Se espera un número entero < a 9999999)" data-success="Se ve bien!">Se espera un numero entero</span>
+							        </div>
+							        <div class="input-field col s3 m3 I3">
+									  <input id="expte3" type="number" max="9999" placeholder = "0000" class="validate">
+									  <label for="expte3">Cuerpo</label>
+									  <span class="helper-text" data-error="Error en formato. (Se espera un número entero < a 9999)" data-success="Se ve bien!">Se espera un numero entero</span>
+							        </div>
+							        <div class="input-field col s3 m3 I3">
+							          <!-- <input value="0" id="expte4" type="text" class="validate">
+									  <label for="expte4">Alcance</label> -->
+									  
+									<input id="expte4" type="number" max="9" value = "0" placeholder = "0" class="validate">
+									<label for="expte4">Alcance</label>
+									<span class="helper-text" data-error="Error en formato. (Se espera un número entero < a 9)" data-success="Se ve bien!">Se espera un numero entero</span>
+									</div>
+
+									<!-- div oculto donde se carga el expediente completo -->
+									<div class="hide">
+									<!-- <div class="input-field col s12 m12 I3"> -->
+										<input id="expediente" type="text" value = {{form.expediente}}>
+									</div>
+							    </div>
+						    
+						
+
+
+
+
+				<div class="row">
+			      	
+						  		
+						  			<div class="input-field col s12 m8 I6">
+							          <input id="contribuyente" type="text" class="validate">
+							          <label for="contribuyente">Contribuyente</label>
+							        </div>
+							        <!-- <div class="input-field col s12 m4 I5">
+							          <input id="tipo_domicilio" type="text" class="validate">
+							          <label for="tipo_domicilio">Tipo Domicilio</label>
+							        </div> -->
+							        <div class="input-field col s12 m4 I5">
+										<select serchable='seleccionar' id="id_tipo_domicilio" value={{form.id_tipo_domicilio}}</select> 
+									    <!-- <select serchable='seleccionar' id="id_tipo_domicilio">
+									    	<option value="" disabled selected>Seleccione opcción</option>
+								      		<option value="Fiscal">Fiscal</option>
+										    <option value="Inmueble">Inmueble</option>
+										    <option value="Constituido">Constituido</option>
+										    <option value="Otro">Otro</option>
+										</select> -->
+								      <label for="id_tipo_domicilio">Tipo Domicilio</label>
+									</div>
+									
+
+									
+
+							        <div class="input-field col s6 m6 I3">
+							          <input id="calle" type="text" class="validate">
+							          <label for="calle">Calle</label>
+							        </div>
+							        <div class="input-field col s6 m6 I3">
+							          <input id="numero" type="text" class="validate">
+							          <label for="numero">Número</label>
+							        </div>
+
+							        <div class="input-field col s12 m12 I3">
+								    	<!-- <i class="material-icons prefix">search</i> -->
+									    <input type="text" id="localidad" class="autocomplete" name="localidad">
+								      <label for="localidad">Localidad</label>
+								      <ul id="searchResult"></ul>
+								      <!-- <div><h4 id="seleccionado"></h4></div> -->
+								    </div>
+								    <div class="suggestions">
+
+                					</div>
+
+								    <!-- <div class="input-field col s12 m12 I3">
+								    	<i class="material-icons prefix">search</i>
+									    <input type="text" id="buscar_1" class="autocomplete">
+								      <label for="buscar_1">Buscar</label>
+								    </div> -->
+
+								    
+
+							        <div class="input-field col s6 m6 I3">
+									  	<input id="pdo" type="number" max="999" class="validate">
+										<label for="pdo">Partido</label>
+										<span class="helper-text" data-error="Error en formato. (Se espera un número entero < a 999)" data-success="Se ve bien!">Se espera un numero entero</span>
+							        </div>
+							        <div class="input-field col s6 m6 I3">
+							          <input id="cp_postal" type="text" class="autocomplete">
+							          <!-- <select id="cp_postal" type="text" class="autocomplete"> -->
+							          <label for="cp">CP</label>
+							        </div>
+							    </div>
+						 
+						
+
+
+
+
+				<div class="row">
+			      	
+
+						  		
+							        <!-- <div class="input-field col s6 m6 I3">
+							          <input id="accion" type="text" class="validate">
+							          <label for="accion">Acción</label>
+							        </div> -->
+							        <div class="input-field col s12 m4 I5">
+										<select serchable='seleccionar' id="idaccion" value={{form.idaccion}}</select>
+									    <!-- <select serchable='seleccionar' id="accion">
+									    	<option value="" disabled selected>Seleccione wopcción</option>
+								      		<option value="IP">IP</option>
+										    <option value="RP">RP</option>
+										    <option value="Otro">Otro</option>
+										</select> -->
+								      <label for="idaccion">Acción</label>
+								    </div>
+							        <!-- <div class="input-field col s6 m6 I3">
+							          <input id="subaccion" type="text" class="validate">
+							          <label for="subaccion">Sub. Acción</label>
+							        </div> -->
+							        
+							        <div class="input-field col s12 m4 I5">
+									    <select serchable='seleccionar' id="idsubaccion" value={{form.idsubaccion}}</select> 
+									    	
+								      <label for="idsubaccion">Sub-acción</label>
+									</div>
+									
+									
+
+							        <div class="input-field col s6 m6 I3">
+							          <!-- <input id="operativo" type="text" class="validate">
+									  <label for="operativo">Operativo</label> -->
+									  
+									<input id="operativo" type="number" max="999999999" class="validate">
+									<label for="operativo">Operativo</label>
+									<span class="helper-text" data-error="Error en formato. (Se espera un número entero < a 999999999)" data-success="Se ve bien!">Se espera un numero entero</span>
+
+							        </div>
+							        <div class="input-field col s6 m6 I3">
+							          <!-- <input id="op_origen" type="text" class="validate">
+									  <label for="op_origen">Op. Origen</label> -->
+									  
+									<input id="op_origen" type="number" max="999999999" class="validate">
+									<label for="op_origen">Op. Origen</label>
+									<span class="helper-text" data-error="Error en formato. (Se espera un número entero < a 999999999)" data-success="Se ve bien!">Se espera un numero entero</span>
+							        </div>
+							        <div class="input-field col s6 m6 I6">
+							          <!-- <input id="f_salida" type="text" class="validate"> -->
+ 										<input type="text" class="datepicker">
+										<label for="f_salida">Fecha Salida</label>
+							        </div>
+
+				</div>
+				<!-- <div class="input-field col s6 m6 I6"> -->
+										<!-- <button class="btn waves-effect waves-light" type="submit" name="action" onclick="set_exp()">Enviar -->
+										<button class="btn waves-effect waves-light" type="submit" name="action" onclick="set_exp()">Enviar
+
+										    <i class="material-icons right">send</i>
+										</button>
+							        <!-- </div> -->
+    		</div>
+			
+
+    	</form>
+    </div>
+</div>
+
+	
+
+    <script src="{% static 'js/jquery-3.4.1.js' %}"></script>
+    <script src="{% static 'materialize/js/materialize.js' %}"></script>
+
+    <script>
+      $(document).ready(function(){
+        $('.sidenav').sidenav();
+        $('.collapsible').collapsible();
+        $('select').formSelect();
+        $('.datepicker').datepicker();
+      });
+    </script>
+
+
+
+
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $(function() {
+    $.ajax({
+      type: 'GET',
+      url: 'http://192.168.0.12:8000/api/unprefijo/',
+      format: 'json',
+
+      success: function(response) {
+        var resultado = response;
+        
+        var datos = [];
+        for (var i = 0; i < resultado.length; i++) {
+          datos[resultado[i].ds_localidad.trim()] = resultado[i].id+','+resultado[i].partido+','+resultado[i].cp_postal
+		//   console.log(datos);
+        }
+        $('#localidad').autocomplete({
+			data: datos,
+          	limit:10,
+			minLength:1,
+			onAutocomplete : function(seleccionado) {
+				buscado = buscar(seleccionado);
+				// console.log(seleccionado);
+			},
+        });
+ 
+		function buscar(dato_a_buscar){ 
+			
+			var d = [];
+			var cp_array = [];
+			var elementos = [];
+			for (var i = 0; i < resultado.length; i++) {
+          		d[resultado[i].id] = resultado[i].ds_localidad.trim()+','+resultado[i].partido+','+resultado[i].cp_postal +','+resultado[i].id
+          	}
+			
+          	for (var i = 1; i < d.length; i++) {
+
+          		var separado = d[i].split(',');
+          		
+          		if (separado[0] == dato_a_buscar) {
+
+          			//obtengo la lista de elementos resultado
+          			elementos[separado[3]] = separado[3]+','+separado[0]+','+separado[1]+','+separado[2]
+          			cp_array[separado[2]]=(separado[2]+': '+ null)
+          			// console.log(elementos[i]);
+
+		        	//console.log('Localidad: '+separado[0] +' Partido: '+ separado[1] + ' CP: '+separado[2]+' ID: '+separado[3]);
+		      		
+		        	// console.log(separado[1]);
+		        	// console.log(elementos);
+		      		$("#pdo").val(separado[1]);
+					//   console.log(separado[1]);
+		      		$("#cp_postal").val(separado[2]);
+		      		// console.log(cp_array);
+
+		      	}
+
+		      	$('#cp_postal').autocomplete({
+						data: cp_array,
+			          	//limit:10,
+						// minLength:1,
+						
+				});
+				
+          	}	
+		}
+      },
+
+    });
+
+
+  });
+});
+
+</script>
+
+
+<script>
+function set_exp(exp){ 
+	// var va1 = document.getElementById("expte1").innerHTML;
+	// var va1 = $("#expte1").val();
+	var codigo = $("#expte1").val();
+	var numero = $("#expte2").val();
+	var cuerpo = $("#expte3").val();
+	var alcance = $("#expte4").val();
+	
+	console.log(codigo +'-'+ numero +'-'+ cuerpo +'-'+ alcance);
+	$("#expediente").val(codigo +'-'+ numero +'-'+ cuerpo +'-'+ alcance );
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+ <!-- <script type="text/javascript">
+$(document).ready(function() {
+  $(function() {
+    $.ajax({
+      type: 'GET',
+      url: 'http://192.168.0.12:8000/api/unprefijo/',
+      format: 'json',
+      //dataType: 'application/json; charset=utf-8',
+      // Content-Type: 'application/json',
+
+      success: function(response) {
+        var resultado = response;
+        
+        var datos = [];
+        for (var i = 0; i < resultado.length; i++) {
+          datos[resultado[i].ds_localidad.trim()] = resultado[i].id+','+resultado[i].partido+','+resultado[i].cp_postal
+          // datos[resultado[i].id] = resultado[i].ds_localidad.trim()+','+resultado[i].partido+','+resultado[i].cp_postal+resultado[i].id
+
+          //console.log(datos);
+
+        }
+        $('input.autocomplete').autocomplete({
+			data: datos,
+          	limit:10,
+			minLength:1,
+			onAutocomplete : function(seleccionado) {
+				// var resultado2 = [];
+
+				//console.log(resultado);
+				//var datos = resultado[seleccionado.trim().toLowerCase().replace(" ","_")];
+				
+				buscado = buscar(seleccionado);
+
+				// console.log('resultado:'+ buscado);
+			},
+			// onSelect: function (suggestion) {
+			// 	console.log('onSelect: '+suggestion);
+			// },
+        });
+  //       function buscar(dato_a_buscar){ 
+		// 	console.log(dato_a_buscar);
+		// 	const arreglo = datos;
+		// 	console.log(arreglo);
+
+		// 	var resultado = arreglo.find(element => element = dato_a_buscar);
+		
+		// 	return resultado 
+		// }
+
+		function buscar(dato_a_buscar){ 
+
+			// return datos.ds_localidad === dato_a_buscar;
+			
+			var d = [];
+			for (var i = 0; i < resultado.length; i++) {
+          		d[resultado[i].id] = resultado[i].ds_localidad.trim()+','+resultado[i].partido+','+resultado[i].cp_postal +','+resultado[i].id
+          	}
+
+          	for (var i = 1; i < d.length; i++) {
+          		var separado = d[i].split(',');
+          		//console.log(separado[0]);
+          		if (separado[0] === dato_a_buscar) {
+		          //return d[i];
+		         console.log('Localidad: '+separado[0] +' Partido: '+ separado[1] + ' CP: '+separado[2]+' ID: '+separado[3]);
+		      	}
+          	}
+
+          	// console.log(Object.keys(d));
+			// console.log(d[1]);
+			//console.log(d.id);
+			
+
+			// console.log(resultado);
+			// const found = resultado.ds_localidad.find(element => element = separado[0]);
+			//console.log(found);
+
+			// 	separo el string 
+			//	var separado = d[i].split(',');
+			// 	imprimo el 0 del string (el nombre a buscar)
+			// 	console.log(separado[0]);
+
+			//for (var i=0; i < resultado.length; i++) {
+
+				//separado = d[i].split(',');
+				//console.log(separado[0]);
+				
+				// if (separado[i][0] === dato_a_buscar) {
+		  //         //return d[i];
+		  //         console.log(separado[0] +','+ separado[1] +','+separado[2]+','+separado[3]);
+		  //     	}
+
+		      //}
+		 //  	}
+				
+
+
+			//arregloDeSubCadenas = cadena.split(separador);
+			//console.log(d.findIndex(dato_a_buscar));
+		      
+		   //    if (resultado.ds_localidad === dato_a_buscar) {
+		   //        //return d[i];
+		   //        console.log(d[i]);
+
+		   //   }
+		  	// }
+			
+			
+		}
+		
+
+
+      },
+
+    });
+
+  });
+});
+
+
+  	
+
+</script> -->
+
+
+<!-- <script type="text/javascript">
+    $(document).ready(function() {
+  //Autocomplete
+  $(function() {
+    $.ajax({
+      type: 'GET',
+      url: 'http://192.168.0.12:8000/api/unprefijo/?ds_localidad',
+      // dataType: 'application/json; charset=utf-8',
+      dataType: 'JSON',
+      // Content-Type: 'application/json',
+      success: function(response) {
+        var resultado = response;
+        // console.log(resultado)
+        // var datos = [];
+        // var datos_1 = [];
+        // var datos_2 = [];
+        // var data = {};
+
+        for (var i = 0; i < resultado.length; i++) {
+          //console.log(resultado[i].ds_localidad.trim()+' '+resultado[i].partido+' '+resultado[i].cp_postal);
+          var datos[resultado[i].ds_localidad] = resultado[i].ds_localidad.trim()+','+resultado[i].partido+','+resultado[i].cp_postal+resultado[i].id
+
+          // datos[resultado[i].ds_localidad.trim()] = resultado[i].ds_localidad.trim()+','+resultado[i].partido+','+resultado[i].cp_postal+resultado[i].id
+          
+          // datos_1 = 'Localidad:'+resultado[i].ds_localidad.trim()+', Partido:'+resultado[i].partido+', cp_postal:'+resultado[i].cp_postal
+          // datos_2 = resultado[i].ds_localidad.trim()+','+resultado[i].partido+','+resultado[i].cp_postal
+          //console.log(datos_1)
+
+        }
+        $('input.autocomplete').autocomplete({
+			data : datos,
+			// data: {
+			// 	// term: term,
+   //          	ds_localidad: $("#ds_localidad").val(),
+   //          	partido: $('#partido').val(),
+   //          	cp_postal: $('#cp_postal').val(),
+   //          	id: $('#id').val(),
+   //          },
+
+          	limit:10,
+			minLength:1,
+			//onAutocomplete : function(seleccionado) {
+				// console.log('Localidad: '+res.ds_localidad.trim()+' '+ 'Partido: '+xhr.dato_pdo+' '+ 'CP: '+xhr.dato_cp+' '+ 'Registro: '+xhr.dato_id);
+				// console.log(dataLocalidad);
+				// console.log(seleccionado);
+				//console.log(seleccionado[]);
+
+			//},
+			// onAutocomplete : function(xhr, status) {
+			onAutocomplete : function(event, ui) {
+			    console.log(resultado.partido);
+
+			},
+
+			// select : function(event, ui) {
+			// 	var label = ui.item.label;
+   //              var value = ui.item.value;
+		    	
+		 //    	console.log(ui.item.label);
+		 //  	},
+
+        });
+        
+      }
+    });
+  });
+});
+</script> -->
+
+
+<!-- <script>
+
+
+	    document.addEventListener('DOMContentLoaded',function(){
+	     
+	    const datos = {
+	    		'Google':null,
+	    		'Yahoo':null,
+	    		'Youtube':null,
+	    		'OstonCode':null
+	    	};
+	    const inputField = document.querySelector('.autocomplete');
+	     
+	    M.Autocomplete.init(inputField,{
+	    	data: datos,
+	    	limit:'infinit',
+	    	minLength:1,
+
+	    });
+	     
+	    });
+
+
+    
+</script> -->
+
+
+<!-- <script>
+        var contenido = document.querySelector('.autocomplete')
+        
+        function traer(){
+            fetch('https://randomuser.me/api/')
+            .then(res => res.json())
+            .then(data => {
+                console.log(data.results['0'])
+                // contenido.innerHTML = `
+                // <img src="${data.results['0'].picture.large}" width="100px" class="img-fluid rounded-circle"> 
+                // <p>Nombre: ${data.results['0'].name.last}</p>
+                //`
+            })
+        }
+        
+</script> -->
+
+
+
+
+
+
+<!-- <script type="text/javascript">
+	
+
+
+
+
+$(document).ready(function(){
+
+    $("#localidad").keyup(function(){
+        var search = $(this).val();
+
+        if(search != ""){
+
+            $.ajax({
+                url: 'http://192.168.0.12:8000/api/unprefijo/',
+                type: 'get',
+                data: {search:search, type:1},
+                dataType: 'json',
+                success:function(response){
+                
+                    var len = response.length;
+                    $("#searchResult").empty();
+                    for( var i = 0; i<len; i=4){
+                        
+                        var localidad = response[i]['ds_localidad'];
+                        //var id = response[i]['id'];
+                        //var partido = response[i]['partido'];
+                        //var cp = response[i]['cp_postal'];
+                        // $("#searchResult").append("<li value='"+response[i]['ds_localidad']+"'>");
+
+                        console.log(localidad );
+                        // console.log(localidad +' '+id +' '+partido +' '+cp );
+                        $("#searchResult").append("<li value='"+localidad.trim()+"'>");
+                        // $("#searchResult").append("<li value='"+id+"'>"+partido+"</li>");
+
+                    }
+
+                    // binding click event to li
+                    // $("#searchResult li").bind("click",function(){
+                    //     setText(this);
+                    // });
+
+                }
+            });
+        }
+
+    });
+
+});
+
+// Set Text to search box and get details
+// function setText(element){
+
+//     var value = $(element).text();
+//     var userid = $(element).val();
+
+//     $("#txt_search").val(value);
+//     $("#searchResult").empty();
+    
+//     // Request User Details
+//     $.ajax({
+//         url: 'getSearch.php',
+//         type: 'post',
+//         data: {userid:userid, type:2},
+//         dataType: 'json',
+//         success: function(response){
+
+//             var len = response.length;
+//             $("#userDetail").empty();
+//             if(len > 0){
+//                 var username = response[0]['username'];
+//                 var email = response[0]['email'];
+//                 $("#userDetail").append("Username : " + username + "<br/>");
+//                 $("#userDetail").append("Email : " + email);
+//             }
+//         }
+
+//     });
+// }
+ 
+
+
+</script>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <script>
+    
+// const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+const endpoint = 'http://192.168.0.12:8000/api/unprefijo/';
+
+
+
+const cities = [];
+
+// fetch grabs endpoint - at this point a promise and generates readablestream
+fetch(endpoint)
+  .then(blob => blob.json())
+  .then(data => cities.push(...data));
+
+function findMatches(keyword, cities) {
+  return cities.filter(place => {
+    // does city or state match? use paramater regex
+    const regex = new RegExp(keyword, 'gi');
+    return place.ds_localidad.match(regex) // || place.state.match(regex)
+  });
+}
+
+// add results to HTML li
+function displayMatches() {
+  const matchArray = findMatches(this.value, cities)
+  const html = matchArray.map(place => {
+    
+    const regex = new RegExp(this.value, 'gi');
+    const cityName = place.ds_localidad.replace(regex, `<span class="highlight">${this.value}</span>`);
+    
+    
+    return `
+      <li>
+        
+        <span class=".autocomplete">${place.ds_localidad}</span>
+        <span class=".autocomplete">${place.partido}</span>
+        <span class=".autocomplete">${place.cp_postal}</span>
+        <span class=".autocomplete">${place.id}</span>
+      </li>
+    `;
+  }).join('');
+  
+  suggestions.innerHTML = html;
+}
+
+const searchInput = document.querySelector('.autocomplete');
+const suggestions = document.querySelector('.suggestions');
+
+searchInput.addEventListener('change', displayMatches);
+searchInput.addEventListener('keyup', displayMatches);
+
+
+
+	<script type="text/javascript">
+
+		document.addEventListener('DOMContentLoaded', function() {
+			const endpoint = 'http://192.168.0.12:8000/api/unprefijo/';
+			const cities = [];
+
+            var options = {
+            	data: {
+	            	"Apple": null,
+	            	"Microsoft": null,
+	            	"Google": null
+            	},
+            	limit:1,
+            	minLength:1,
+            	onAutocomplete: function(resultado){
+            		console.log('completo: '+resultado);
+            		// document.getElementById('seleccionado').innerHTML="Seleccionado: "+resultado
+            	}
+        	};
+	        var elems = document.querySelectorAll('.autocomplete');
+	        var instamces = M.Autocomplete.init(elems, options);
+
+	        
+			// var elems = document.querySelectorAll('select');
+			// var options = document.querySelectorAll('option');
+			// var instances = M.FormSelect.init(elems, options);
+
+        });
+    </script>
+ -->
+
+
+
+
+
+
+<!-- <script>
+    
+// const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+const endpoint = 'http://192.168.0.12:8000/api/unprefijo/';
+
+
+
+const cities = [];
+
+// fetch grabs endpoint - at this point a promise and generates readablestream
+fetch(endpoint)
+  .then(blob => blob.json())
+  .then(data => cities.push(...data));
+
+function findMatches(keyword, cities) {
+  return cities.filter(place => {
+    // does city or state match? use paramater regex
+    const regex = new RegExp(keyword, 'gi');
+    return place.ds_localidad.match(regex) // || place.state.match(regex)
+  });
+}
+
+// add results to HTML li
+function displayMatches() {
+  const matchArray = findMatches(this.value, cities)
+  const html = matchArray.map(place => {
+    
+    const regex = new RegExp(this.value, 'gi');
+    const cityName = place.ds_localidad.replace(regex, `<span class="highlight">${this.value}</span>`);
+    
+    
+    return `
+      <li>
+        
+        <span class=".autocomplete">${place.ds_localidad}</span>
+        <span class=".autocomplete">${place.partido}</span>
+        <span class=".autocomplete">${place.cp_postal}</span>
+        <span class=".autocomplete">${place.id}</span>
+      </li>
+    `;
+  }).join('');
+  
+  suggestions.innerHTML = html;
+}
+
+const searchInput = document.querySelector('.autocomplete');
+const suggestions = document.querySelector('.suggestions');
+
+searchInput.addEventListener('change', displayMatches);
+searchInput.addEventListener('keyup', displayMatches);
+
+
+
+</script> -->
+
+    
+
+<!-- ok ok 11-->
+<!-- <script type="text/javascript">
+    $(document).ready(function() {
+  //Autocomplete
+  $(function() {
+
+    $.ajax({
+      type: 'GET',
+      dataType: "json",
+      url: 'http://192.168.0.12:8000/api/unprefijo/?ds_localidad',
+      success: function(response) {
+        
+        var dataLocalidad = {};
+        var resultado = [];
+
+        //console.log(response);
+
+		resultado = $.map(response, function(item) {  
+			//console.log(item.id, item.ds_localidad.trim(), item.partido, item.cp_postal);   
+		    return { id: item.id, localidad: item.ds_localidad.trim(), partido: item.partido, cp: item.cp_postal};
+		    //return { localidad: item.ds_localidad.trim() };
+		})
+		// console.log(resultado);
+		for (var i = 0; i < resultado.length; i++) {
+          dataLocalidad[resultado[i].localidad] = resultado[i];
+          console.log(resultado[i]);
+        }
+
+        function sendItem(val) {
+			    console.log('llega desde autocompletar'+val);
+		}
+		
+        $('input.autocomplete').autocomplete({
+          	data: dataLocalidad,
+          	limit:10,
+			minLength:1,
+			// onAutocomplete : function(seleccionado) {
+
+
+			// onAutocomplete : function(xhr, status) {
+
+		 //     source: dataLocalidad,
+		 //     change: function (event, ui) { 
+		 //     	console.log(ui.item.id); 
+		 //     } 
+
+
+			onAutocomplete : function(xhr, status) {
+				//llama a la funcion sendItem y envia dato
+				sendItem(xhr);
+				// console.log('Localidad: '+res.ds_localidad.trim()+' '+ 'Partido: '+xhr.dato_pdo+' '+ 'CP: '+xhr.dato_cp+' '+ 'Registro: '+xhr.dato_id);
+				// console.log(dataLocalidad);
+				//console.log(seleccionado);
+				// console.log(seleccionado);
+				
+				//console.log(xhr);
+
+				// for (var i = 0; i < xhr.length; i++) {
+		          
+		  //         console.log('valor: '+xhr[i]);
+		          //console.log('valor: '+xhr);
+		        //}
+			},
+			limit: 5, 
+			//select: function (event, ui) {
+				//console.log('select');
+
+		 //        $("#userName").val(ui.item.label); // display the selected text
+		 //        $("#userId").val(ui.item.value); // save selected id to hidden input
+		         //return false;
+		    //}
+			
+        });
+      },
+      error: function(e) {
+        console.log('Error!', e);
+    	},
+    
+    });
+  });
+});
+</script>  -->
+
+
+  </body>
+
+
+        <footer class="page-footer teal lighten-2">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">ARBA Fiscalización</h5>
+                <p class="grey-text text-lighten-4">Sistema de seguimiento de notificaciones.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Redes Sociales</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">LinkedIn</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Twitter</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Instragram</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            Enero © 2020 @cristian_olmos
+            <a class="grey-text text-lighten-4 right" href="#!">Más Info</a>
+            </div>
+          </div>
+        </footer>
+            
+</html>
+        

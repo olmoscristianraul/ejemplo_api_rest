@@ -1,0 +1,149 @@
+{% extends "bootstrap/base.html" %}
+{% load static %}
+
+
+
+{% block content %}
+
+
+
+<body>
+    <div class="container-fluid">
+        <!-- <div class="row">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-2 border"> <p>dos</p> </div>
+            <div class="col-12 col-sm-12 col-md-8 col-lg-4 col-xl-8 border"> <p>uno</p> </div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-2 border"> <p>tres</p> </div>
+        </div>  -->
+        <!-- Fin row -->
+
+            <!-- <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-2 border"> <p>dos</p> </div>
+            <div class="col-12 col-sm-12 col-md-8 col-lg-4 col-xl-8 border"> <p>uno</p> </div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-2 border"> <p>tres</p> </div> -->
+        
+
+        <!-- <div class="row">
+            <div class="col-12 col-sm-6 col md-4 col-lg-4 col-xl-2 border"> <p>dos</p> </div>
+            <div class="col-12 col-sm-6 col-md-8 col-lg-4 col-xl-8 border"> <p>uno</p> </div>
+            <div class="col-12 col-sm-12 col-md- col-lg-4 col-xl-2 border"> <p>tres</p> </div>
+        </div>  -->
+        <!-- Fin row -->
+
+        <div class="row">
+        
+            <div class="col-sm-1 col md-1 col-lg-1 col-xl-1 border"> <p>uno</p> </div>
+
+
+            <div class="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10 border"> 
+
+                
+                <input type='text' class='form-control' id= 'partido' name= 'partido' placeholder='Partido' value='{{ form.partido | safe | striptags }}'></input>
+                <input type='text' class='form-control' id= 'partida' name= 'partida' placeholder='Partida' value='{{ form.partida | safe | striptags }}'></input>
+
+                <input type='text' class='form-control' id= 'partido' name= 'partido' placeholder='Partido' value='{{ form.partido | safe | striptags }}'>
+                <input type='email' class='form-control' id= 'contact_email' name= 'contact_email' placeholder='name@example.com' value='{{ form.contact_email.value | safe | striptags }}'>
+
+
+                <input class="form-control" row='3' id= 'expediente_organismo' name= 'expediente_organismo' placeholder="Expte Organismo" value='{{ form.expediente_organismo.value | safe | striptags }}'></input>
+                <input class="form-control" row='3' id= 'expediente_numero' name= 'expediente_numero' placeholder="Expte Número" value='{{ form.expediente_numero.value | safe | striptags }}'></input>
+                <input class="form-control" row='3' id= 'expediente_ceros' name= 'expediente_ceros' placeholder="4 Ceros" value='{{ form.expediente_ceros.value | safe | striptags }}'></input>
+                <input class="form-control" row='3' id= 'expediente_alcance' name= 'expediente_alcance' placeholder="Alcance" value='{{ form.expediente_alcance.value | safe | striptags }}'></input>
+
+                <input class="form-control" row='3' id= 'expediente' name= 'expediente' placeholder="expediente" value='{{ form.expediente.value | safe | striptags }}'></input>
+
+
+                <input class="form-control" row='3' id= 'contribuyente' name= 'contribuyente' placeholder="contribuyente" value='{{ form.contribuyente.value | safe | striptags }}'></input>
+                <input class="form-control" row='3' id= 'localidad' name= 'localidad' placeholder="localidad" value='{{ form.localidad.value | safe | striptags }}'></input>
+                <input class="form-control" row='3' id= 'id_tipo_domicilio' name= 'id_tipo_domicilio' placeholder="id_tipo_domicilio" value='{{ form.id_tipo_domicilio.value | safe | striptags }}'></input>
+                <input class="form-control" row='3' id= 'calle' name= 'calle' placeholder="calle" value='{{ form.calle.value | safe | striptags }}'></input>
+                <input class="form-control" row='3' id= 'numero' name= 'numero' placeholder="numero" value='{{ form.numero.value | safe | striptags }}'></input>
+                <!-- <input class="form-control" row='3' id= 'fecha_cargada' name= 'fecha_cargada' placeholder="fecha_cargada" value='{{ form.expediente.value | safe | striptags }}'></input> -->
+                <!-- <input class="form-control" row='3' id= 'idusuario_carga' name= 'idusuario_carga' placeholder="idusuario_carga" value='{{ form.expediente.value | safe | striptags }}'></input> -->
+                <input class="form-control" row='3' id= 'fecha_notificada' name= 'fecha_notificada' placeholder="fecha_notificada" value='{{ form.fecha_notificada.value | safe | striptags }}'></input>
+                 
+                <input class="form-control datepicker" data-date-format="mm/dd/yyyy" row='3' id= 'fecha_notificada' name= 'fecha_notificada' placeholder="fecha_notificada" value='{{ form.fecha_notificada.value | safe | striptags }}'></input>
+                <!-- <input class="datepicker" data-date-format="mm/dd/yyyy"> -->
+
+                <!-- Ver esto -->
+                <!-- https://www.malot.fr/bootstrap-datetimepicker/                     -->
+
+                <input class="form-control" row='3' id= 'idusuario_notifica' name= 'idusuario_notifica' placeholder="idusuario_notifica" value='{{ form.idusuario_notifica.value | safe | striptags }}'></input>
+                <input class="form-control" row='3' id= 'idestado' name= 'idestado' placeholder="idestado" value='{{ form.idestado.value | safe | striptags }}'></input>
+
+                <input class="form-control" row='3' id= 'idforma' name= 'idforma' placeholder="idforma" value='{{ form.idforma.value | safe | striptags }}'></input>
+                <input class="form-control" row='3' id= 'lote' name= 'lote' placeholder="lote" value='{{ form.lote.value | safe | striptags }}'></input>
+
+                <input class="form-control" row='3' id= 'operativo_origen' name= 'operativo_origen' placeholder="operativo_origen" value='{{ form.operativo_origen.value | safe | striptags }}'></input>
+                
+                <!-- <input class="form-control" row='3' id= 'fecha_salida' name= 'fecha_salida' placeholder="fecha_salida" value='{{ form.fecha_salida.value | safe | striptags }}'></input> -->
+                <input class="form-control datepicker" data-date-format="mm/dd/yyyy" row='3' id= 'fecha_salida' name= 'fecha_salida' placeholder="fecha_salida" value='{% if request.user.matricula is not None  %} {{ form.fecha_salida.value | safe | striptags }} {% endif %} '></input>
+
+                <input class="form-control" row='3' id= 'metros' name= 'metros' placeholder="metros" value='{{ form.metros.value | safe | striptags }}'></input>
+                <input class="form-control" row='3' id= 'monto' name= 'monto' placeholder="monto" value='{{ form.monto.value | safe | striptags }}'></input>
+                <input class="form-control" row='3' id= 'cp' name= 'cp' placeholder="Alcance" value='{{ form.cp.value | safe | striptags }}'></input>
+                <input class="form-control" row='3' id= 'pdo_notif' name= 'lote' placeholder="pdo_notif" value='{{ form.pdo_notif.value | safe | striptags }}'></input>
+                <!-- <textarea class="form-control" row='3' id= 'content' name= 'content' placeholder="Ingrese el mensaje" value='{{ form.content.value | safe | striptags }}'></textarea> -->
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-1 col-xl-1 border"> <p>tres</p> </div>
+        </div> <!-- Fin row -->
+
+        <div class="row">
+        
+            <div class="col-sm-1 col md-1 col-lg-1 col-xl-1 border"> <p>uno</p> </div>
+
+            <div class="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10 border"> 
+
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-12 col-lg-1 col-xl-1 border"> <p>tres</p> </div>
+        </div> <!-- Fin row -->
+
+        
+    </div> <!--fin container-->
+
+
+
+
+
+
+<script>
+  $('.datepicker').datepicker({
+  startDate: '-3d'
+  });
+</script> 
+
+
+
+</body>
+{% endblock content %}
+

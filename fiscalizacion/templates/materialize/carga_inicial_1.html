@@ -1,0 +1,247 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+
+    <!--Import materialize.css-->
+    <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/> -->
+    <!-- <link rel="stylesheet" href="{% static 'materialize/css/materialize.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'materialize/css/materialize.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+    <!--JavaScript at end of body for optimized loading-->
+    <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
+
+
+    <!-- Iconos y fuentes local -->
+    <!-- http://google.github.io/material-design-icons/#icon-font-for-the-web -->
+
+    <style type="text/css">
+    	.select-wrapper ul {
+		  overflow: auto;
+		}
+    </style>
+
+  </head>
+
+  <body>
+
+    <nav>
+    <div class="nav-wrapper blue">
+      <a href="#!" class="brand-logo" style="margin-left: 1em">Fiscalización</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href={%url 'r132:inicio' %}><i class="material-icons left">home</i>Inicio</a></li>
+        <li><a href="badges.html">Componentes</a></li>
+        <li><a href="collapsible.html">Ejemplos</a></li>
+        <li><a href="mobile.html">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href={%url 'r132:inicio' %}><i class="material-icons">home</i>Inicio</a></li>
+    <li><a href="badges.html">Componentes</a></li>
+    <li><a href="collapsible.html">Ejemplos</a></li>
+    <li><a href="mobile.html">Contacto</a></li>
+  </ul>
+
+    <div class="contailner">
+ 		<div class="card-panel waves-effect waves-block waves-light">
+		  	<div class="row">
+		    	<form class="col s12">
+
+		      		
+
+		      		<div class="row">
+		      			
+									<div class="card-panel waves-effect waves-block waves-light">
+										<div class="input-field col s6 m3 I3">
+										  <input placeholder="Pdo" id="partido" type="text" class="validate">
+										  <label for="partido">Partido</label>
+										</div>
+										<div class="input-field col s6 m3 I3">
+										  <input placeholder="Pda" id="partida" type="text" class="validate">
+										  <label for="partida">Partida</label>
+										</div>
+										<div class="input-field col s6 m3 I3">
+										  <input placeholder="Mtrs" id="metros" type="text" class="validate">
+										  <label for="metros">Metros</label>
+										</div>
+										<div class="input-field col s6 m3 I3">
+										  <input placeholder="$" id="monto" type="text" class="validate">
+										  <label for="monto">Monto</label>
+										</div>
+									</div>
+								</div>
+				    		
+
+
+			    <div class="row">
+			      	
+						  		<div class="card-panel waves-effect waves-block waves-light">
+							        <div class="input-field col s12 m3 I3">
+							          <input placeholder="2360" id="expte1" type="text" class="validate">
+							          <label for="expte1">Organismo</label>
+							        </div>
+							        <div class="input-field col s4 m3 I3">
+							          <input placeholder="Número" id="expte2" type="text" class="validate">
+							          <label for="expte2">Número</label>
+							        </div>
+							        <div class="input-field col s3 m3 I3">
+							          <input placeholder="0000" id="expte3" type="text" class="validate">
+							          <label for="expte3">Cuerpo</label>
+							        </div>
+							        <div class="input-field col s3 m3 I3">
+							          <input placeholder="0" id="expte4" type="text" class="validate">
+							          <label for="expte4">Alcance</label>
+							        </div>
+							    </div>
+						    </div>
+						
+
+
+
+
+				<div class="row">
+			      	
+						  		<div class="card-panel waves-effect waves-block waves-light">
+						  			<div class="input-field col s12 m8 I6">
+							          <input placeholder="Contribuyente" id="expte1" type="text" class="validate">
+							          <label for="expte1">Contribuyente</label>
+							        </div>
+							        <div class="input-field col s12 m4 I5">
+							          <input placeholder="Tipo Domicilio" id="expte1" type="text" class="validate">
+							          <label for="expte1">Tipo Domicilio</label>
+							        </div>
+							        <div class="input-field col s6 m6 I3">
+							          <input placeholder="Calle" id="expte2" type="text" class="validate">
+							          <label for="expte2">Calle</label>
+							        </div>
+							        <div class="input-field col s6 m6 I3">
+							          <input placeholder="Número" id="expte3" type="text" class="validate">
+							          <label for="expte3">Número</label>
+							        </div>
+							        
+							        <div class="input-field col s12 m12 I3">
+								      <!-- <input placeholder="Localidad" id="expte4" type="text" class="validate"> -->
+									    <select serchable = 'Choose your option' id="xxxx">
+								      		<option value="1900">La Plata</option>
+										    <option value="1896">Villa Elisa</option>
+										    <option value="1894">City Bell</option>
+										    <option value="7240">Lobos</option>
+										    <option value="1234">Tandil</option>
+										    <option value="1">1</option>
+										    <option value="2">2</option>
+										    <option value="3">3</option>
+										    <option value="4">4</option>
+										</select>
+								      <label for="expte4">Localidad</label>
+								    </div>
+
+							        <div class="input-field col s6 m6 I3">
+							          <input placeholder="Partido" id="expte4" type="text" class="validate">
+							          <label for="expte4">Partido</label>
+							        </div>
+							        <div class="input-field col s6 m6 I3">
+							          <input placeholder="CP" id="expte4" type="text" class="validate">
+							          <label for="expte4">CP</label>
+							        </div>
+							    </div>
+						    </div>
+						
+
+
+
+				<div class="row">
+			      	
+						  		<div class="card-panel waves-effect waves-block waves-light">
+							        <div class="input-field col s6 m6 I3">
+							          <input placeholder="Acción" id="expte1" type="text" class="validate">
+							          <label for="expte1">Acción</label>
+							        </div>
+							        <div class="input-field col s6 m6 I3">
+							          <input placeholder="Sub. Acción" id="expte3" type="text" class="validate">
+							          <label for="expte3">Sub. Acción</label>
+							        </div>
+							        <div class="input-field col s6 m6 I3">
+							          <input placeholder="Operativo" id="expte2" type="text" class="validate">
+							          <label for="expte2">Operativo</label>
+							        </div>
+							        <div class="input-field col s6 m6 I3">
+							          <input placeholder="Op. Origen" id="expte3" type="text" class="validate">
+							          <label for="expte3">Op. Origen</label>
+							        </div>
+							        <div class="input-field col s6 m6 I2">
+							          <input placeholder="Fecha Salida" id="expte4" type="text" class="validate">
+							          <label for="expte4">Fecha Salida</label>
+							        </div>
+							    </div>
+						    </div>
+						
+    		</div>
+    	</form>
+    </div>
+</div>
+
+	
+
+    <script src="{% static 'js/jquery-3.4.1.js' %}"></script>
+    <script src="{% static 'materialize/js/materialize.js' %}"></script>
+
+    <script>
+      $(document).ready(function(){
+        $('.sidenav').sidenav();
+        $('.collapsible').collapsible();
+        // $('select').formSelect();
+      });
+    </script>
+
+    <script type="text/javascript">
+    // 	document.addEventListener('DOMContentLoaded', function() {
+		  //   var elems = document.querySelectorAll('select');
+		  //   var instances = M.FormSelect.init(elems, options);
+		  // });
+
+	  var instances;
+	   document.addEventListener('DOMContentLoaded', function() {
+		var elems = document.querySelectorAll('select');
+		const options = [
+		{ name : 'Villa Elisa',  value : '1896'},
+		{ name : 'City Bell',  value : '1894'},
+		{ name : 'Lobos',  value : '7240'},
+		{ name : 'Tandil', value : '1234'},
+		{ name : '1', value : '1'},
+		{ name : '2', value : '2'},
+		{ name : '3', value : '3'},
+		{ name : '4', value : '4'}
+		]
+		 instances = M.FormSelect.init(elems, options);
+		
+
+
+	  });
+	  		function getVAl(){
+			//console.log(instances[0].getSelectedValues());
+			console.log(document.getElementById("xxxx").value);
+		}
+	
+	  </script>
+
+
+   
+
+
+  </body>
+</html>
+        

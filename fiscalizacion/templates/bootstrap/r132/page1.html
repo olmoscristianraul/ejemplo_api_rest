@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet"  href="{% static 'web/plugins/bootstrap_4.4.1/bootstrap.min.css' %}"> -->
+    <title>Pagina de inicio</title>
+  </head>
+  <body>
+    <h1>Inicio</h1>
+    {% block page_contenido %}
+        <h1 class="h3 mb-4 text-gray-800">Pagina1</h1>
+    {% endblock page_contenido%}
+
+    
+    {% block footer %}
+        
+    {% endblock footer%}
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="{% static 'web/plugins/jquery_3.4.1/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'web/js/popper.min.js' %}"></script>
+    <script src="{% static 'web/plugins/bootstrap_4.4.1/bootstrap.min.js' %}"></script> -->
+  </body>
+</html>

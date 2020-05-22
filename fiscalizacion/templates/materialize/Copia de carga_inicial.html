@@ -1,0 +1,612 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+
+    <!--Import materialize.css-->
+    <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/> -->
+    <!-- <link rel="stylesheet" href="{% static 'materialize/css/materialize.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'materialize/css/materialize.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+    <!--JavaScript at end of body for optimized loading-->
+    <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
+
+
+    <!-- Iconos y fuentes local -->
+    <!-- http://google.github.io/material-design-icons/#icon-font-for-the-web -->
+
+
+
+  </head>
+
+  <body>
+
+    <nav>
+    <div class="nav-wrapper teal lighten-2">
+      <a href="#!" class="brand-logo" style="margin-left: 1em">Fiscalización</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href={%url 'r132:inicio' %}><i class="material-icons left">home</i>Inicio</a></li>
+        <li><a href="badges.html">Componentes</a></li>
+        <li><a href="collapsible.html">Ejemplos</a></li>
+        <li><a href="mobile.html">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href={%url 'r132:inicio' %}><i class="material-icons">home</i>Inicio</a></li>
+    <li><a href="badges.html">Componentes</a></li>
+    <li><a href="collapsible.html">Ejemplos</a></li>
+    <li><a href="mobile.html">Contacto</a></li>
+  </ul>
+
+    <div class="contailner">
+ 		<div class="card-panel waves-effect waves-block waves-light">
+		  	<div class="row">
+		    	<form class="col s12">
+
+		      		
+
+		      		<div class="row">
+		      			
+									
+										<div class="input-field col s6 m3 I3">
+										  <input id="partido" type="text" class="validate">
+										  <label for="partido">Partido</label>
+										</div>
+										<div class="input-field col s6 m3 I3">
+										  <input id="partida" type="text" class="validate">
+										  <label for="partida">Partida</label>
+										</div>
+										<div class="input-field col s6 m3 I3">
+										  <input id="metros" type="text" class="validate">
+										  <label for="metros">Metros</label>
+										</div>
+										<div class="input-field col s6 m3 I3">
+										  <input id="monto" type="text" class="validate">
+										  <label for="monto">Monto</label>
+										</div>
+									</div>
+								
+				    		
+
+
+			    <div class="row">
+			      	
+						  		
+							        <div class="input-field col s12 m3 I3">
+							          <input value = "2360" id="expte1" type="text" class="validate">
+							          <label for="expte1">Organismo</label>
+							        </div>
+							        <div class="input-field col s4 m3 I3">
+							          <input id="expte2" type="text" class="validate">
+							          <label for="expte2">Número</label>
+							        </div>
+							        <div class="input-field col s3 m3 I3">
+							          <input value="0000" id="expte3" type="text" class="validate">
+							          <label for="expte3">Cuerpo</label>
+							        </div>
+							        <div class="input-field col s3 m3 I3">
+							          <input value="0" id="expte4" type="text" class="validate">
+							          <label for="expte4">Alcance</label>
+							        </div>
+							    </div>
+						    
+						
+
+
+
+
+				<div class="row">
+			      	
+						  		
+						  			<div class="input-field col s12 m8 I6">
+							          <input id="contribuyente" type="text" class="validate">
+							          <label for="contribuyente">Contribuyente</label>
+							        </div>
+							        <!-- <div class="input-field col s12 m4 I5">
+							          <input id="tipo_domicilio" type="text" class="validate">
+							          <label for="tipo_domicilio">Tipo Domicilio</label>
+							        </div> -->
+							        <div class="input-field col s12 m4 I5">
+									    <select serchable='seleccionar' id="tipo_domicilio">
+									    	<option value="" disabled selected>Seleccione opcción</option>
+								      		<option value="Fiscal">Fiscal</option>
+										    <option value="Inmueble">Inmueble</option>
+										    <option value="Constituido">Constituido</option>
+										    <option value="Otro">Otro</option>
+										</select>
+								      <label for="tipo_domicilio">Tipo Domicilio</label>
+								    </div>
+
+							        <div class="input-field col s6 m6 I3">
+							          <input id="calle" type="text" class="validate">
+							          <label for="calle">Calle</label>
+							        </div>
+							        <div class="input-field col s6 m6 I3">
+							          <input id="numero" type="text" class="validate">
+							          <label for="numero">Número</label>
+							        </div>
+
+							        <div class="input-field col s12 m12 I3">
+								    	<!-- <i class="material-icons prefix">search</i> -->
+									    <input type="text" id="localidad" class="autocomplete">
+								      <label for="localidad">Localidad</label>
+								      <!-- <div><h4 id="seleccionado"></h4></div> -->
+								    </div>
+
+								    <!-- <div class="input-field col s12 m12 I3">
+								    	<i class="material-icons prefix">search</i>
+									    <input type="text" id="buscar_1" class="autocomplete">
+								      <label for="buscar_1">Buscar</label>
+								    </div> -->
+
+								    
+
+							        <div class="input-field col s6 m6 I3">
+							          <input id="partido" type="text" class="validate">
+							          <label for="partido">Partido</label>
+							        </div>
+							        <div class="input-field col s6 m6 I3">
+							          <input id="cp" type="text" class="validate">
+							          <label for="cp">CP</label>
+							        </div>
+							    </div>
+						 
+						
+
+
+
+
+				<div class="row">
+			      	
+
+						  		
+							        <!-- <div class="input-field col s6 m6 I3">
+							          <input id="accion" type="text" class="validate">
+							          <label for="accion">Acción</label>
+							        </div> -->
+							        <div class="input-field col s12 m4 I5">
+									    <select serchable='seleccionar' id="accion">
+									    	<option value="" disabled selected>Seleccione opcción</option>
+								      		<option value="IP">IP</option>
+										    <option value="RP">RP</option>
+										    <option value="Otro">Otro</option>
+										</select>
+								      <label for="tipo_domicilio">Acción</label>
+								    </div>
+							        <!-- <div class="input-field col s6 m6 I3">
+							          <input id="subaccion" type="text" class="validate">
+							          <label for="subaccion">Sub. Acción</label>
+							        </div> -->
+							        <div class="input-field col s12 m4 I5">
+									    <select serchable='seleccionar' id="subaccion">
+									    	<option value="" disabled selected>Seleccione opcción</option>
+								      		<option value="N84">N84</option>
+										    <option value="R84">R84</option>
+										    <option value="IPUC">IPUC</option>
+										    <option value="IPEX">IPEX</option>
+										    <option value="Otro">Otro</option>
+										</select>
+								      <label for="tipo_domicilio">Sub-acción</label>
+								    </div>
+
+							        <div class="input-field col s6 m6 I3">
+							          <input id="operativo" type="text" class="validate">
+							          <label for="operativo">Operativo</label>
+							        </div>
+							        <div class="input-field col s6 m6 I3">
+							          <input id="op_origen" type="text" class="validate">
+							          <label for="op_origen">Op. Origen</label>
+							        </div>
+							        <div class="input-field col s6 m6 I6">
+							          <!-- <input id="f_salida" type="text" class="validate"> -->
+ 										<input type="text" class="datepicker">
+										<label for="f_salida">Fecha Salida</label>
+							        </div>
+
+				</div>
+				<!-- <div class="input-field col s6 m6 I6"> -->
+							        	<button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+										    <i class="material-icons right">send</i>
+										</button>
+							        <!-- </div> -->
+    		</div>
+			
+
+    	</form>
+    </div>
+</div>
+
+	
+
+    <script src="{% static 'js/jquery-3.4.1.js' %}"></script>
+    <script src="{% static 'materialize/js/materialize.js' %}"></script>
+
+    <script>
+      $(document).ready(function(){
+        $('.sidenav').sidenav();
+        $('.collapsible').collapsible();
+        // $('select').formSelect();
+        $('.datepicker').datepicker();
+      });
+    </script>
+
+    <!-- Funciona ok -->
+    <!-- <script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function() {
+            var options = {
+            	data: {
+	            	"Apple": null,
+	            	"Microsoft": null,
+	            	"Google": null
+            	},
+            	limit:1,
+            	minLength:1,
+            	onAutocomplete: function(resultado){
+            		console.log('completo: '+resultado);
+            		// document.getElementById('seleccionado').innerHTML="Seleccionado: "+resultado
+            	}
+        	};
+	        var elems = document.querySelectorAll('.autocomplete');
+	        var instamces = M.Autocomplete.init(elems, options);
+
+	        
+			// var elems = document.querySelectorAll('select');
+			// var options = document.querySelectorAll('option');
+			// var instances = M.FormSelect.init(elems, options);
+
+        });
+    </script> -->
+
+    <!-- Funciona ok -->
+    <!-- <script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function() {
+            // var options = document.querySelectorAll('select');
+            var options = {
+            	data: {
+	            	"Apple": null,
+	            	"Microsoft": null,
+	            	"Google": null
+            	},
+            	limit:3,
+            	minLength:3,
+            	// onAutocomplete: function(resultado){
+            	// 	// console.log('completo: '+resultado);
+            	// 	document.getElementById('seleccionado').innerHTML="Seleccionado: "+resultado
+            	// }
+        	};
+	        var elems = document.querySelectorAll('.autocomplete');
+	        var instamces = M.Autocomplete.init(elems, options);
+        });
+    </script>
+ -->
+
+    <!-- <script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function() {
+        	// var valor = document.getElementById("localidad").value;
+		    $.ajax({
+		    	url: "http://192.168.0.12:8000/api/unprefijo/?ds_localidad",
+		        dataType: 'json',
+		        success: function( data ) {
+		        	
+					console.log(data);
+
+		        	var options = {
+		        		data,
+			        	limit:2,
+			        	minLength:2,
+		        };
+		        	var elems = document.querySelectorAll('.autocomplete');
+			    	var instamces = M.Autocomplete.init(elems, options);
+			    	console.log(options);
+		    	}
+
+		    	// error : function(xhr, status) {
+			    //     alert('Disculpe, existió un problema');
+			    // },
+
+			    // // código a ejecutar sin importar si la petición falló o no
+			    // complete : function(xhr, status) {
+			    //     alert('Petición realizada');
+			    // }
+	    	});
+	    
+        });
+
+    </script> -->
+
+    <!-- ok ok-->
+<!-- <script type="text/javascript">
+    $(document).ready(function() {
+  //Autocomplete
+  $(function() {
+
+    $.ajax({
+      type: 'GET',
+      dataType: "json",
+      url: 'http://192.168.0.12:8000/api/unprefijo/?ds_localidad',
+      success: function(response) {
+        var resultado = response;
+        var dataLocalidad = {};
+
+        // var dato_localidad='';
+        // var dato_pdo='';
+        // var dato_cp='';
+        // var dato_id='';
+        // console.log(resultado);
+
+        for (var i = 0; i < resultado.length; i++) {
+          
+          // dataLocalidad[resultado[i].ds_localidad] = resultado[i].flag; //resultado[i].flag or null
+          dataLocalidad[resultado[i].ds_localidad] = resultado[i].ds_localidad.trim()+' '+resultado[i].partido+' '+resultado[i].cp_postal+' '+resultado[i].id; //resultado[i].flag or null
+          		
+          		// dato_localidad = resultado[i].ds_localidad;
+          		// dato_pdo = resultado[i].partido;
+          		// dato_cp = resultado[i].cp_postal;
+          		// dato_id = resultado[i].id;
+         		// console.log(resultado[i].partido);
+        }
+        $('input.autocomplete').autocomplete({
+          	data: dataLocalidad,
+          	limit:10,
+			minLength:1,
+			onAutocomplete : function(seleccionado) {
+				// console.log('Localidad: '+res.ds_localidad.trim()+' '+ 'Partido: '+xhr.dato_pdo+' '+ 'CP: '+xhr.dato_cp+' '+ 'Registro: '+xhr.dato_id);
+				// console.log(dataLocalidad);
+				// console.log(seleccionado);
+				console.log(seleccionado);
+
+
+			},
+			// select: function (event, ui) {
+
+		 //        $("#userName").val(ui.item.label); // display the selected text
+		 //        $("#userId").val(ui.item.value); // save selected id to hidden input
+		 //        return false;
+		 //    }
+			
+        });
+      },
+      error: function(e) {
+        console.log('Error!', e);
+    	},
+    
+    });
+  });
+});
+</script> -->
+
+
+<!-- <script type="text/javascript">
+
+    	$(document).ready(function(){
+
+    		$("#localidad").autocomplete({
+    			source: function(request, response){
+    				$.ajax({
+    					url:"http://192.168.0.12:8000/api/unprefijo/?ds_localidad",
+    					dataType:"json",
+    					data:{q:request.term},
+    					success: function(data){
+    						response(data);
+    					}
+    					
+    				});
+    			},
+
+    			minLength:3,
+    			select: function(event, ui){
+    				console.log("Seleccionado: "+ ui.item.label);
+    			}
+    		});
+    	});
+    </script> -->
+
+<!-- trabajando -->
+<!-- <script type="text/javascript">
+    $(document).ready(function() {
+  //Autocomplete
+  $(function() {
+    $.ajax({
+      type: 'GET',
+      url: 'http://192.168.0.12:8000/api/unprefijo/?ds_localidad',
+      // dataType: 'application/json; charset=utf-8',
+      dataType: 'JSON',
+      // Content-Type: 'application/json',
+      success: function(response) {
+        var resultado = response;
+        // console.log(resultado)
+        var datos = [];
+        // var datos_1 = [];
+        // var datos_2 = [];
+        var data = {};
+
+        for (var i = 0; i < resultado.length; i++) {
+          //console.log(resultado[i].ds_localidad.trim()+' '+resultado[i].partido+' '+resultado[i].cp_postal);
+          // datos[resultado[i].ds_localidad] = resultado[i].ds_localidad.trim()+' '+resultado[i].partido+' '+resultado[i].cp_postal
+
+          datos[resultado[i].ds_localidad.trim()] = resultado[i].ds_localidad.trim()+','+resultado[i].partido+','+resultado[i].cp_postal+resultado[i].id
+          
+          // datos_1 = 'Localidad:'+resultado[i].ds_localidad.trim()+', Partido:'+resultado[i].partido+', cp_postal:'+resultado[i].cp_postal
+          // datos_2 = resultado[i].ds_localidad.trim()+','+resultado[i].partido+','+resultado[i].cp_postal
+          //console.log(datos_1)
+
+        }
+        $('input.autocomplete').autocomplete({
+			data : datos,
+			// data: {
+			// 	// term: term,
+   //          	ds_localidad: $("#ds_localidad").val(),
+   //          	partido: $('#partido').val(),
+   //          	cp_postal: $('#cp_postal').val(),
+   //          	id: $('#id').val(),
+   //          },
+
+          	limit:10,
+			minLength:4,
+			//onAutocomplete : function(seleccionado) {
+				// console.log('Localidad: '+res.ds_localidad.trim()+' '+ 'Partido: '+xhr.dato_pdo+' '+ 'CP: '+xhr.dato_cp+' '+ 'Registro: '+xhr.dato_id);
+				// console.log(dataLocalidad);
+				// console.log(seleccionado);
+				//console.log(seleccionado[]);
+
+			//},
+			// onAutocomplete : function(xhr, status) {
+			onAutocomplete : function(event, ui) {
+			    console.log(resultado.partido);
+
+			},
+
+			// select : function(event, ui) {
+			// 	var label = ui.item.label;
+   //              var value = ui.item.value;
+		    	
+		 //    	console.log(ui.item.label);
+		 //  	},
+
+        });
+        
+      }
+    });
+  });
+});
+</script> -->
+
+
+<script type="text/javascript">
+	new autoComplete({
+    selector: 'input[name=localidad;]',
+    minChars: 1,
+    source: function(term, suggest){
+        term = term.toLowerCase();
+        var choices = [['Australia', 'au'], ['Austria', 'at'], ['Brasil', 'br'], ...];
+        var suggestions = [];
+        for (i=0;i<choices.length;i++)
+            if (~(choices[i][0]+' '+choices[i][1]).toLowerCase().indexOf(term)) suggestions.push(choices[i]);
+        suggest(suggestions);
+    },
+    renderItem: function (item, search){
+        search = search.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+        var re = new RegExp("(" + search.split(' ').join('|') + ")", "gi");
+        return item[1]+'-'+item[0]
+
+        // return '<div class="autocomplete-suggestion" data-langname="'+item[0]+'" data-lang="'+item[1]+'" data-val="'+search+'"><img src="img/'+item[1]+'.png"> '+item[0].replace(re, "<b>$1</b>")+'</div>';
+    },
+    onSelect: function(e, term, item){
+    	console.log(item.getAttribute('partido'));
+        alert('Item "'+item.getAttribute('data-langname')+' ('+item.getAttribute('data-lang')+')" selected by '+(e.type == 'keydown' ? 'pressing enter' : 'mouse click')+'.');
+    }
+});
+
+</script>
+
+
+<!-- <script type="text/javascript">
+	 // (document).ready(function() {
+   	  // $(function() {
+  		// $(document).ready(function(){ 
+  			// $('.input.autocomplete').autocomplete({
+  			document.addEventListener('DOMContentLoaded', function() {
+	        //$('#localidad').autocomplete({
+	        // $('localidad').autocomplete({
+            source:function(request, response){
+                $.ajax({
+                    url: 'http://192.168.0.12:8000/api/unprefijo/?ds_localidad',
+                    type: "GET",
+                    dataType: "json",
+                    data:{ valor: request.term},
+                    success:function(data){
+                        response(data);
+                    }
+                });
+            },
+
+            minLength:2,
+            select: function(event, ui){
+                data =ds_localidad
+                //data = ui.item.id +"*"+ ui.item.ds_localidad +"*"+ ui.item.partido +"*"+ ui.item.cp_postal +"*"+ ui.item.id;
+                console.log(data);
+            },
+        });
+    //});
+  
+
+</script> -->
+
+<!-- <script type="text/javascript">
+$(document).ready(function() {
+  $(function() {
+    $.ajax({
+      type: 'GET',
+      url: 'http://192.168.0.12:8000/api/unprefijo/?ds_localidad',
+      dataType: 'application/json; charset=utf-8',
+      // Content-Type: 'application/json',
+      success: function(response) {
+        var resultado = response;
+        var datos = [];
+
+        for (var i = 0; i < resultado.length; i++) {
+          datos[resultado[i].ds_localidad.trim()] = resultado[i].ds_localidad.trim()
+        }
+        $('input.autocomplete').autocomplete({
+			data: datos,
+          	limit:5,
+			minLength:4,
+			onAutocomplete : function(seleccionado) {
+				console.log(seleccionado);
+			},
+        });
+      }
+    });
+  });
+});
+      
+</script> -->
+    
+
+   
+
+  </body>
+
+
+        <footer class="page-footer teal lighten-2">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">ARBA Fiscalización</h5>
+                <p class="grey-text text-lighten-4">Sistema de seguimiento de notificaciones.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Redes Sociales</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">LinkedIn</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Twitter</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Instragram</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            Enero © 2020 @cristian_olmos
+            <a class="grey-text text-lighten-4 right" href="#!">Más Info</a>
+            </div>
+          </div>
+        </footer>
+            
+</html>
+        

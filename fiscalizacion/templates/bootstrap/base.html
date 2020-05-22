@@ -1,0 +1,24 @@
+
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+<script src="{% static 'plugins/jquery_3.4.1/jquery-3.4.1.min.js' %}"></script>
+<script src="{% static 'plugins/bootstrap_4.4.1/minimo/popper.min.js' %}"></script>
+<script src="{% static 'plugins/bootstrap_4.4.1/minimo/bootstrap.min.js' %}"></script>
+<link href="{% static 'plugins/bootstrap_4.4.1/minimo/bootstrap.min.css' %}" rel="stylesheet" />
+
+
+<script src="{% static 'plugins/bootstrap_4.4.1/datepicker/js/bootstrap-datepicker.js' %}"></script>
+<link href="{% static 'plugins/bootstrap_4.4.1/datepicker/css/datepicker.css' %}" rel="stylesheet" />
+
+
+    
+<body>
+    
+    {% block content %}
+    {% endblock  %}
+
+</body>
+
+</html>

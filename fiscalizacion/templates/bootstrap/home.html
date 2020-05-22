@@ -1,0 +1,1085 @@
+{% extends "bootstrap/base_2.html" %}
+
+{% load staticfiles %}
+
+
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8">
+  <title>R-132</title>
+
+
+{% block formulario %} 
+  <div class="container">
+    <div class="card-header">
+      <div class="row">
+        <form class="needs-validation" novalidate>
+          <div class="form-row">
+  
+            <div class="col-md-2 mb-3">
+               <!-- <label for="id_fecha_salida">Fecha de salida</label> -->
+                  <!-- {{ form.fecha_salida }}    -->
+                  <!-- <input class="form-control" type="Date" id="id_fecha_salida " > -->
+                  <input class="datepicker form-control" type="text" name="date" id="id_fecha_salida " placeholder="Fecha Salida" maxlength='10'>
+
+                  <script type="text/javascript">
+                    $(function(){
+                     $('.datepicker').datepicker();
+                    });
+                  </script>
+                  <!-- DatePicker doc-->
+                  <!-- https://www.youtube.com/watch?v=t8LwG3gyPmg -->
+                  <!-- https://www.eyecon.ro/bootstrap-datepicker/ -->
+               
+
+              <div class="valid-tooltip">
+                Se ve bien!
+              </div>
+            </div>
+            <!-- <input type="button" value="fill the date" onclick="filldate();"> -->
+
+            <div class="col-md-2 mb-3">
+              <!-- <label for="id_partido">Partido</label> -->
+              {{ form.partido }}
+              <div class="valid-tooltip">
+                Se ve bien!
+              </div>
+            </div>
+
+
+            <div class="col-md-2 mb-3">
+              <!-- <label for="validationTooltip02">Last name</label> -->
+              <!-- <input type="text" class="form-control" id="partida" placeholder="Partida"  maxlength="6" required> -->
+              <!-- <label for="id_partida">Partida</label> -->
+              {{form.partida}}
+              <div class="valid-tooltip">
+                Se ve bien!
+              </div>
+            </div>
+
+
+            <div class="col-md-2 mb-3">
+              <!-- <label for="validationTooltip02">Last name</label> -->
+              <!-- <label for="id_expediente1">Cod. Organismo</label> -->
+              <input type="text" class="form-control" id="id_expediente1" placeholder="Codigo Organismo" value="2360" required>
+              <div class="valid-tooltip">
+                Se ve bien!
+              </div>
+            </div>
+            <div class="col-md-2 mb-3">
+              <!-- <label for="validationTooltip02">Last name</label> -->
+              <!-- <label for="id_expediente2">Num. Expte.</label> -->
+              <input type="text" class="form-control" id="id_expediente2" placeholder="Num. Expediente" required maxlength="7">
+              <div class="valid-tooltip">
+                Se ve bien!
+              </div>
+            </div>
+            <div class="col-md-1 mb-3">
+              <!-- <label for="validationTooltip02">Last name</label> -->
+              <!-- <label for="id_expediente3">Expte ??</label> -->
+              <input type="text" class="form-control" id="id_expediente3" placeholder="" value="0000" maxlength="4"required>
+              <div class="valid-tooltip">
+                Se ve bien!
+              </div>
+            </div>
+            <div class="col-md-1 mb-3">
+              <!-- <label for="validationTooltip02">Last name</label> -->
+              <!-- <label for="id_expediente4">Alcance</label> -->
+              <input type="text" class="form-control" id="id_expediente4" placeholder="alcance" maxlength="3" value="0" required>
+              <div class="valid-tooltip">
+                Se ve bien!
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            
+            <div class="col-md-2 mb-3">
+              <!-- <label for="id_accion">Acción</label> -->
+              {{ form.idaccion }}
+              <!-- <select class="form-control" id="id_accion" required> -->
+              <div class="valid-tooltip">
+                Se ve bien!
+              </div>
+            </div>
+
+            <div class="col-md-2 mb-3">
+              <!-- <label for="id_sub_accion">Sub Acción</label> -->
+              {{ form.idsubaccion }}
+              <!-- <select class="form-control" id="id_accion" required> -->
+              <div class="valid-tooltip">
+                Se ve bien!
+              </div>
+            </div>
+
+
+            <div class="col-md-2 mb-3">
+              <!-- <label for="validationTooltip02">Last name</label> -->
+              <!-- <label for="operativo_origen">Op. Origen</label> -->
+              {{ form.operativo_origen }}
+              <!-- <input type="text" class="form-control" id="id_oporigen" placeholder="Op. Origen"  required> -->
+              <div class="valid-tooltip">
+                Se ve bien!
+              </div>
+            </div>
+
+            <div class="col-md-2 mb-3">
+              <!-- <label for="validationTooltip02">Last name</label> -->
+              <!-- <label for="id_metros">Metros</label> -->
+              {{ form.metros }}
+              <div class="valid-tooltip">
+                Se ve bien!
+              </div>
+            </div>
+
+            <div class="col-md-2 mb-3">
+              <!-- <label for="validationTooltip02">Last name</label> -->
+              <!-- <label for="id_monto">Monto</label> -->
+              {{ form.monto }}
+              <div class="valid-tooltip">
+                Se ve bien!
+              </div>
+            </div>
+          </div>
+
+            <div class="form-row">
+              <div class="col-md-3 mb-3">
+                <!-- <label for="validationTooltip02">Last name</label> -->
+                <!-- <label for="id_tipo_domicilio">Tipo Domicilio</label> -->
+                {{form.id_tipo_domicilio}}
+                <div class="valid-tooltip">
+                  Se ve bien!
+                </div>
+              </div>
+
+              <div class="col-md-2 mb-3">
+                <!-- <label for="validationTooltip01">First name</label> -->
+                <!-- <label for="id_calle">Calle</label> -->
+                {{form.calle}}
+                <!-- <input type="text" class="form-control" id="id_calle" placeholder="Calle" required> -->
+                <div class="valid-tooltip">
+                  Se ve bien!
+                </div>
+              </div>
+              
+              <div class="col-md-2 mb-3">
+                <!-- <label for="validationTooltip01">First name</label> -->
+                <!-- <label for="id_numero">Numero</label> -->
+                {{form.numero}}
+                <!-- <input type="text" class="form-control" id="id_numero" placeholder="Numero" required> -->
+                <div class="valid-tooltip">
+                  Se ve bien!
+                </div>
+              </div>
+              
+              <div class="col-md-2 mb-3">
+                <!-- <label for="validationTooltip02">Last name</label> -->
+                <!-- <label for="id_localidad">Localidad</label> -->
+                
+                <select id="localidad" value={{form.localidad}}</select>
+                <div class="valid-tooltip">
+                  Se ve bien!
+                </div>
+              </div>
+
+              <script type="text/javascript">
+              
+              
+
+              $(function(){
+                $('.localidad').autocomplete({
+                nameProperty: 'name',
+                valueField: '#hidden-field',
+                dataSource: myData
+
+              });
+              });  
+
+              </script>
+
+
+
+
+              
+              <div class="col-md-1 mb-3">
+                <!-- <label for="validationTooltip02">Last name</label> -->
+                <!-- <label for="id_pdo_notif">Pdo. Notif.</label> -->
+                {{form.pdo_notif}}
+                <!-- <input type="text" class="form-control" id="id_pdo_notif" placeholder="Partido" required> -->
+                <div class="valid-tooltip">
+                  Se ve bien!
+                </div>
+              </div>
+              
+              <div class="col-md-1 mb-3">
+                <!-- <label for="validationTooltip02">Last name</label> -->
+                <!-- <label for="id_cp">cp</label> -->
+                {{form.cp}}
+                <!-- <input type="text" class="form-control" id="id_cp" placeholder="CP" required maxlength="3"> -->
+                <div class="valid-tooltip">
+                  Se ve bien!
+                </div>
+              </div>
+            </div>
+            <div>
+            <button class="btn btn-primary" type="submit">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+{% endblock %}
+<div>
+  <br>
+</div>
+{% block tabla %}
+<br>
+      <!-- <div class="container ">
+        <div class="row"> -->
+        <div class="table-responsive text-nowrap">
+        <!--Table-->
+          <!-- <table class="table table-striped table table-hover table-fixed mi_tabla"> -->
+          <table class="table table-striped table-bordered table-sm mi_tabla">
+          <!-- <table id="dtHorizontalVerticalExample" class="table table-striped table-bordered table-sm " cellspacing="0" width="100%"> -->
+            <thead>
+              <tr>
+                <div>
+                  <td>
+                    <input type="checkbox" class="tabla" id="checkTodos">
+                  </th>
+                </div>
+                <td>Pdo</th>
+                <td>Pda</th>
+                <td align='center';>Expte</th>
+                <td align='center';>Contrib</th>
+                <td>Acción</th>
+                <td>Sub-Acción</th>
+                <td>Calle</th>
+                <td>Número</th>
+                <td>Localidad</th>
+                <td>Domicilio</th>
+                <td>Agente</th>
+                <td>Lote</th>
+                <td>Op</th>
+                <td>Op. Orien</th>
+                <td>Fecha Salida</th>
+                <td>Metros</th>
+                <td>Monto</th>
+                <td>pdo_notif</th>
+                <td>cp</th>
+                <td></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                <div>
+                  <input type="checkbox" class="tabla" id="customCheck1">
+                  <!-- <input type="checkbox" class="custom-control-input" id="customCheck1">
+                  <label class="custom-control-label" for="customCheck1"></label> -->
+                </div>
+                </td>
+                <td>55</td>
+                <td>123456</td>
+                <td>2360-7777777-0000-0</td>
+                <td>Juan Carlos Singolani</td>
+                <td>N84</td>
+                <td>Sancionatoria</td>
+                <td>45</td>
+                <td>1234</td>
+                <td>La Plata</td>
+                <td>Fiscal</td>
+                <td>Juan Tapia</td>
+                <td>201906001</td>
+                <td>201808006</td>
+                <td>201906001</td>
+                <td>2019-12-18</td>
+                <td>2300</td>
+                <td>12.325.500</td>
+                <td>55</td>
+                <td>1900</td>
+                <td>
+                  <button type="button" class="tabla">Editar</button>
+                </td>
+               
+              </tr>
+              <tr>
+                <td>
+                <div>
+                  <input type="checkbox" class="tabla" id="customCheck2">
+                  <!-- <input type="checkbox" class="custom-control-input" id="customCheck2">
+                  <label class="custom-control-label" for="customCheck2"></label> -->
+                </div>
+                </td>
+                <td>55</td>
+                <td>123456</td>
+                <td>2360-7777777-0000-0</td>
+                <td>Juan Carlos Singolani</td>
+                <td>N84</td>
+                <td>Sancionatoria</td>
+                <td>45</td>
+                <td>1234</td>
+                <td>La Plata</td>
+                <td>Fiscal</td>
+                <td>Juan Tapia</td>
+                <td>201906001</td>
+                <td>201808006</td>
+                <td>201906001</td>
+                <td>2019-12-18</td>
+                <td>2300</td>
+                <td>12.325.500</td>
+                <td>55</td>
+                <td>1900</td>
+                <td>
+                  <button type="button" class="tabla">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <div">
+                  <input type="checkbox" class="tabla" id="customCheck3">
+                </div>
+                </td>
+                <td>55</td>
+                <td>123456</td>
+                <td>2360-7777777-0000-0</td>
+                <td>Juan Carlos Singolani</td>
+                <td>N84</td>
+                <td>Sancionatoria</td>
+                <td>45</td>
+                <td>1234</td>
+                <td>La Plata</td>
+                <td>Fiscal</td>
+                <td>Juan Tapia</td>
+                <td>201906001</td>
+                <td>201808006</td>
+                <td>201906001</td>
+                <td>2019-12-18</td>
+                <td>2300</td>
+                <td>12.325.500</td>
+                <td>55</td>
+                <td>1900</td>
+                <td>
+                  <button type="button" class="tabla">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <div">
+                  <input type="checkbox" class="tabla" id="customCheck3">
+                </div>
+                </td>
+                <td>55</td>
+                <td>123456</td>
+                <td>2360-7777777-0000-0</td>
+                <td>Juan Carlos Singolani</td>
+                <td>N84</td>
+                <td>Sancionatoria</td>
+                <td>45</td>
+                <td>1234</td>
+                <td>La Plata</td>
+                <td>Fiscal</td>
+                <td>Juan Tapia</td>
+                <td>201906001</td>
+                <td>201808006</td>
+                <td>201906001</td>
+                <td>2019-12-18</td>
+                <td>2300</td>
+                <td>12.325.500</td>
+                <td>55</td>
+                <td>1900</td>
+                <td>
+                  <button type="button" class="tabla">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <div">
+                  <input type="checkbox" class="tabla" id="customCheck3">
+                </div>
+                </td>
+                <td>55</td>
+                <td>123456</td>
+                <td>2360-7777777-0000-0</td>
+                <td>Juan Carlos Singolani</td>
+                <td>N84</td>
+                <td>Sancionatoria</td>
+                <td>45</td>
+                <td>1234</td>
+                <td>La Plata</td>
+                <td>Fiscal</td>
+                <td>Juan Tapia</td>
+                <td>201906001</td>
+                <td>201808006</td>
+                <td>201906001</td>
+                <td>2019-12-18</td>
+                <td>2300</td>
+                <td>12.325.500</td>
+                <td>55</td>
+                <td>1900</td>
+                <td>
+                  <button type="button" class="tabla">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <div">
+                  <input type="checkbox" class="tabla" id="customCheck3">
+                </div>
+                </td>
+                <td>55</td>
+                <td>123456</td>
+                <td>2360-7777777-0000-0</td>
+                <td>Juan Carlos Singolani</td>
+                <td>N84</td>
+                <td>Sancionatoria</td>
+                <td>45</td>
+                <td>1234</td>
+                <td>La Plata</td>
+                <td>Fiscal</td>
+                <td>Juan Tapia</td>
+                <td>201906001</td>
+                <td>201808006</td>
+                <td>201906001</td>
+                <td>2019-12-18</td>
+                <td>2300</td>
+                <td>12.325.500</td>
+                <td>55</td>
+                <td>1900</td>
+                <td>
+                  <button type="button" class="tabla">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <div">
+                  <input type="checkbox" class="tabla" id="customCheck3">
+                </div>
+                </td>
+                <td>55</td>
+                <td>123456</td>
+                <td>2360-7777777-0000-0</td>
+                <td>Juan Carlos Singolani</td>
+                <td>N84</td>
+                <td>Sancionatoria</td>
+                <td>45</td>
+                <td>1234</td>
+                <td>La Plata</td>
+                <td>Fiscal</td>
+                <td>Juan Tapia</td>
+                <td>201906001</td>
+                <td>201808006</td>
+                <td>201906001</td>
+                <td>2019-12-18</td>
+                <td>2300</td>
+                <td>12.325.500</td>
+                <td>55</td>
+                <td>1900</td>
+                <td>
+                  <button type="button" class="tabla">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <div">
+                  <input type="checkbox" class="tabla" id="customCheck3">
+                </div>
+                </td>
+                <td>55</td>
+                <td>123456</td>
+                <td>2360-7777777-0000-0</td>
+                <td>Juan Carlos Singolani</td>
+                <td>N84</td>
+                <td>Sancionatoria</td>
+                <td>45</td>
+                <td>1234</td>
+                <td>La Plata</td>
+                <td>Fiscal</td>
+                <td>Juan Tapia</td>
+                <td>201906001</td>
+                <td>201808006</td>
+                <td>201906001</td>
+                <td>2019-12-18</td>
+                <td>2300</td>
+                <td>12.325.500</td>
+                <td>55</td>
+                <td>1900</td>
+                <td>
+                  <button type="button" class="tabla">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <div">
+                  <input type="checkbox" class="tabla" id="customCheck3">
+                </div>
+                </td>
+                <td>55</td>
+                <td>123456</td>
+                <td>2360-7777777-0000-0</td>
+                <td>Juan Carlos Singolani</td>
+                <td>N84</td>
+                <td>Sancionatoria</td>
+                <td>45</td>
+                <td>1234</td>
+                <td>La Plata</td>
+                <td>Fiscal</td>
+                <td>Juan Tapia</td>
+                <td>201906001</td>
+                <td>201808006</td>
+                <td>201906001</td>
+                <td>2019-12-18</td>
+                <td>2300</td>
+                <td>12.325.500</td>
+                <td>55</td>
+                <td>1900</td>
+                <td>
+                  <button type="button" class="tabla">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <div">
+                  <input type="checkbox" class="tabla" id="customCheck3">
+                </div>
+                </td>
+                <td>55</td>
+                <td>123456</td>
+                <td>2360-7777777-0000-0</td>
+                <td>Juan Carlos Singolani</td>
+                <td>N84</td>
+                <td>Sancionatoria</td>
+                <td>45</td>
+                <td>1234</td>
+                <td>La Plata</td>
+                <td>Fiscal</td>
+                <td>Juan Tapia</td>
+                <td>201906001</td>
+                <td>201808006</td>
+                <td>201906001</td>
+                <td>2019-12-18</td>
+                <td>2300</td>
+                <td>12.325.500</td>
+                <td>55</td>
+                <td>1900</td>
+                <td>
+                  <button type="button" class="tabla">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <div">
+                  <input type="checkbox" class="tabla" id="customCheck3">
+                </div>
+                </td>
+                <td>55</td>
+                <td>123456</td>
+                <td>2360-7777777-0000-0</td>
+                <td>Juan Carlos Singolani</td>
+                <td>N84</td>
+                <td>Sancionatoria</td>
+                <td>45</td>
+                <td>1234</td>
+                <td>La Plata</td>
+                <td>Fiscal</td>
+                <td>Juan Tapia</td>
+                <td>201906001</td>
+                <td>201808006</td>
+                <td>201906001</td>
+                <td>2019-12-18</td>
+                <td>2300</td>
+                <td>12.325.500</td>
+                <td>55</td>
+                <td>1900</td>
+                <td>
+                  <button type="button" class="tabla">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <div">
+                  <input type="checkbox" class="tabla" id="customCheck3">
+                </div>
+                </td>
+                <td>55</td>
+                <td>123456</td>
+                <td>2360-7777777-0000-0</td>
+                <td>Juan Carlos Singolani</td>
+                <td>N84</td>
+                <td>Sancionatoria</td>
+                <td>45</td>
+                <td>1234</td>
+                <td>La Plata</td>
+                <td>Fiscal</td>
+                <td>Juan Tapia</td>
+                <td>201906001</td>
+                <td>201808006</td>
+                <td>201906001</td>
+                <td>2019-12-18</td>
+                <td>2300</td>
+                <td>12.325.500</td>
+                <td>55</td>
+                <td>1900</td>
+                <td>
+                  <button type="button" class="tabla">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <div">
+                  <input type="checkbox" class="tabla" id="customCheck3">
+                </div>
+                </td>
+                <td>55</td>
+                <td>123456</td>
+                <td>2360-7777777-0000-0</td>
+                <td>Juan Carlos Singolani</td>
+                <td>N84</td>
+                <td>Sancionatoria</td>
+                <td>45</td>
+                <td>1234</td>
+                <td>La Plata</td>
+                <td>Fiscal</td>
+                <td>Juan Tapia</td>
+                <td>201906001</td>
+                <td>201808006</td>
+                <td>201906001</td>
+                <td>2019-12-18</td>
+                <td>2300</td>
+                <td>12.325.500</td>
+                <td>55</td>
+                <td>1900</td>
+                <td>
+                  <button type="button" class="tabla">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <div">
+                  <input type="checkbox" class="tabla" id="customCheck3">
+                </div>
+                </td>
+                <td>55</td>
+                <td>123456</td>
+                <td>2360-7777777-0000-0</td>
+                <td>Juan Carlos Singolani</td>
+                <td>N84</td>
+                <td>Sancionatoria</td>
+                <td>45</td>
+                <td>1234</td>
+                <td>La Plata</td>
+                <td>Fiscal</td>
+                <td>Juan Tapia</td>
+                <td>201906001</td>
+                <td>201808006</td>
+                <td>201906001</td>
+                <td>2019-12-18</td>
+                <td>2300</td>
+                <td>12.325.500</td>
+                <td>55</td>
+                <td>1900</td>
+                <td>
+                  <button type="button" class="tabla">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <div">
+                  <input type="checkbox" class="tabla" id="customCheck3">
+                </div>
+                </td>
+                <td>55</td>
+                <td>123456</td>
+                <td>2360-7777777-0000-0</td>
+                <td>Juan Carlos Singolani</td>
+                <td>N84</td>
+                <td>Sancionatoria</td>
+                <td>45</td>
+                <td>1234</td>
+                <td>La Plata</td>
+                <td>Fiscal</td>
+                <td>Juan Tapia</td>
+                <td>201906001</td>
+                <td>201808006</td>
+                <td>201906001</td>
+                <td>2019-12-18</td>
+                <td>2300</td>
+                <td>12.325.500</td>
+                <td>55</td>
+                <td>1900</td>
+                <td>
+                  <button type="button" class="tabla">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <div">
+                  <input type="checkbox" class="tabla" id="customCheck3">
+                </div>
+                </td>
+                <td>55</td>
+                <td>123456</td>
+                <td>2360-7777777-0000-0</td>
+                <td>Juan Carlos Singolani</td>
+                <td>N84</td>
+                <td>Sancionatoria</td>
+                <td>45</td>
+                <td>1234</td>
+                <td>La Plata</td>
+                <td>Fiscal</td>
+                <td>Juan Tapia</td>
+                <td>201906001</td>
+                <td>201808006</td>
+                <td>201906001</td>
+                <td>2019-12-18</td>
+                <td>2300</td>
+                <td>12.325.500</td>
+                <td>55</td>
+                <td>1900</td>
+                <td>
+                  <button type="button" class="tabla">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <div">
+                  <input type="checkbox" class="tabla" id="customCheck3">
+                </div>
+                </td>
+                <td>55</td>
+                <td>123456</td>
+                <td>2360-7777777-0000-0</td>
+                <td>Juan Carlos Singolani</td>
+                <td>N84</td>
+                <td>Sancionatoria</td>
+                <td>45</td>
+                <td>1234</td>
+                <td>La Plata</td>
+                <td>Fiscal</td>
+                <td>Juan Tapia</td>
+                <td>201906001</td>
+                <td>201808006</td>
+                <td>201906001</td>
+                <td>2019-12-18</td>
+                <td>2300</td>
+                <td>12.325.500</td>
+                <td>55</td>
+                <td>1900</td>
+                <td>
+                  <button type="button" class="tabla">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <div">
+                  <input type="checkbox" class="tabla" id="customCheck3">
+                </div>
+                </td>
+                <td>55</td>
+                <td>123456</td>
+                <td>2360-7777777-0000-0</td>
+                <td>Juan Carlos Singolani</td>
+                <td>N84</td>
+                <td>Sancionatoria</td>
+                <td>45</td>
+                <td>1234</td>
+                <td>La Plata</td>
+                <td>Fiscal</td>
+                <td>Juan Tapia</td>
+                <td>201906001</td>
+                <td>201808006</td>
+                <td>201906001</td>
+                <td>2019-12-18</td>
+                <td>2300</td>
+                <td>12.325.500</td>
+                <td>55</td>
+                <td>1900</td>
+                <td>
+                  <button type="button" class="tabla">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <div">
+                  <input type="checkbox" class="tabla" id="customCheck3">
+                </div>
+                </td>
+                <td>55</td>
+                <td>123456</td>
+                <td>2360-7777777-0000-0</td>
+                <td>Juan Carlos Singolani</td>
+                <td>N84</td>
+                <td>Sancionatoria</td>
+                <td>45</td>
+                <td>1234</td>
+                <td>La Plata</td>
+                <td>Fiscal</td>
+                <td>Juan Tapia</td>
+                <td>201906001</td>
+                <td>201808006</td>
+                <td>201906001</td>
+                <td>2019-12-18</td>
+                <td>2300</td>
+                <td>12.325.500</td>
+                <td>55</td>
+                <td>1900</td>
+                <td>
+                  <button type="button" class="tabla">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <div">
+                  <input type="checkbox" class="tabla" id="customCheck3">
+                </div>
+                </td>
+                <td>55</td>
+                <td>123456</td>
+                <td>2360-7777777-0000-0</td>
+                <td>Juan Carlos Singolani</td>
+                <td>N84</td>
+                <td>Sancionatoria</td>
+                <td>45</td>
+                <td>1234</td>
+                <td>La Plata</td>
+                <td>Fiscal</td>
+                <td>Juan Tapia</td>
+                <td>201906001</td>
+                <td>201808006</td>
+                <td>201906001</td>
+                <td>2019-12-18</td>
+                <td>2300</td>
+                <td>12.325.500</td>
+                <td>55</td>
+                <td>1900</td>
+                <td>
+                  <button type="button" class="tabla">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <div">
+                  <input type="checkbox" class="tabla" id="customCheck3">
+                </div>
+                </td>
+                <td>55</td>
+                <td>123456</td>
+                <td>2360-7777777-0000-0</td>
+                <td>Juan Carlos Singolani</td>
+                <td>N84</td>
+                <td>Sancionatoria</td>
+                <td>45</td>
+                <td>1234</td>
+                <td>La Plata</td>
+                <td>Fiscal</td>
+                <td>Juan Tapia</td>
+                <td>201906001</td>
+                <td>201808006</td>
+                <td>201906001</td>
+                <td>2019-12-18</td>
+                <td>2300</td>
+                <td>12.325.500</td>
+                <td>55</td>
+                <td>1900</td>
+                <td>
+                  <button type="button" class="tabla">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <div">
+                  <input type="checkbox" class="tabla" id="customCheck3">
+                </div>
+                </td>
+                <td>55</td>
+                <td>123456</td>
+                <td>2360-7777777-0000-0</td>
+                <td>Juan Carlos Singolani</td>
+                <td>N84</td>
+                <td>Sancionatoria</td>
+                <td>45</td>
+                <td>1234</td>
+                <td>La Plata</td>
+                <td>Fiscal</td>
+                <td>Juan Tapia</td>
+                <td>201906001</td>
+                <td>201808006</td>
+                <td>201906001</td>
+                <td>2019-12-18</td>
+                <td>2300</td>
+                <td>12.325.500</td>
+                <td>55</td>
+                <td>1900</td>
+                <td>
+                  <button type="button" class="tabla">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <div">
+                  <input type="checkbox" class="tabla" id="customCheck3">
+                </div>
+                </td>
+                <td>55</td>
+                <td>123456</td>
+                <td>2360-7777777-0000-0</td>
+                <td>Juan Carlos Singolani</td>
+                <td>N84</td>
+                <td>Sancionatoria</td>
+                <td>45</td>
+                <td>1234</td>
+                <td>La Plata</td>
+                <td>Fiscal</td>
+                <td>Juan Tapia</td>
+                <td>201906001</td>
+                <td>201808006</td>
+                <td>201906001</td>
+                <td>2019-12-18</td>
+                <td>2300</td>
+                <td>12.325.500</td>
+                <td>55</td>
+                <td>1900</td>
+                <td>
+                  <button type="button" class="tabla">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <div">
+                  <input type="checkbox" class="tabla" id="customCheck3">
+                </div>
+                </td>
+                <td>55</td>
+                <td>123456</td>
+                <td>2360-7777777-0000-0</td>
+                <td>Juan Carlos Singolani</td>
+                <td>N84</td>
+                <td>Sancionatoria</td>
+                <td>45</td>
+                <td>1234</td>
+                <td>La Plata</td>
+                <td>Fiscal</td>
+                <td>Juan Tapia</td>
+                <td>201906001</td>
+                <td>201808006</td>
+                <td>201906001</td>
+                <td>2019-12-18</td>
+                <td>2300</td>
+                <td>12.325.500</td>
+                <td>55</td>
+                <td>1900</td>
+                <td>
+                  <button type="button" class="tabla">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <div">
+                  <input type="checkbox" class="tabla" id="customCheck3">
+                </div>
+                </td>
+                <td>55</td>
+                <td>123456</td>
+                <td>2360-7777777-0000-0</td>
+                <td>Juan Carlos Singolani</td>
+                <td>N84</td>
+                <td>Sancionatoria</td>
+                <td>45</td>
+                <td>1234</td>
+                <td>La Plata</td>
+                <td>Fiscal</td>
+                <td>Juan Tapia</td>
+                <td>201906001</td>
+                <td>201808006</td>
+                <td>201906001</td>
+                <td>2019-12-18</td>
+                <td>2300</td>
+                <td>12.325.500</td>
+                <td>55</td>
+                <td>1900</td>
+                <td>
+                  <button type="button" class="tabla">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <div">
+                  <input type="checkbox" class="tabla" id="customCheck3">
+                </div>
+                </td>
+                <td>55</td>
+                <td>123456</td>
+                <td>2360-7777777-0000-0</td>
+                <td>Juan Carlos Singolani</td>
+                <td>N84</td>
+                <td>Sancionatoria</td>
+                <td>45</td>
+                <td>1234</td>
+                <td>La Plata</td>
+                <td>Fiscal</td>
+                <td>Juan Tapia</td>
+                <td>201906001</td>
+                <td>201808006</td>
+                <td>201906001</td>
+                <td>2019-12-18</td>
+                <td>2300</td>
+                <td>12.325.500</td>
+                <td>55</td>
+                <td>1900</td>
+                <td>
+                  <button type="button" class="tabla">Editar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <div">
+                  <input type="checkbox" class="tabla" id="customCheck3">
+                </div>
+                </td>
+                <td>55</td>
+                <td>123456</td>
+                <td>2360-7777777-0000-0</td>
+                <td>Juan Carlos Singolani</td>
+                <td>N84</td>
+                <td>Sancionatoria</td>
+                <td>45</td>
+                <td>1234</td>
+                <td>La Plata</td>
+                <td>Fiscal</td>
+                <td>Juan Tapia</td>
+                <td>201906001</td>
+                <td>201808006</td>
+                <td>201906001</td>
+                <td>2019-12-18</td>
+                <td>2300</td>
+                <td>12.325.500</td>
+                <td>55</td>
+                <td>1900</td>
+                <td>
+                  <button type="button" class="tabla">Editar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+{% endblock %} 
+
+
+<footer class="container">
+  <p>&copy; ARBA Fiscalización 2019-2020 @cristian_olmos</p>
+</footer>
+      <script src="{% static 'jquery_3.4.1/jquery-3.4.1.min.js' %}"></script>
+      <script src="{% static '/bootstrap_4.4.1/js/bootstrap.js'%}"></script>
+      <!-- <script src="{% static 'bootstrap_4.4.1/js/bootstrap.min.js'%}"></script> -->
+      <script src="{% static 'bootstrap_4.4.1/js/bootstrap.bundle.min.js'%}"></script>
+      <!-- <script type="https://code.jquery.com/jquery-3.4.1.min.js"></script>  -->
+
+
+     
+
+
+     
+    </body>
+</html>
